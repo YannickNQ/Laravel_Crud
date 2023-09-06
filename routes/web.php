@@ -2,6 +2,8 @@
 
     use App\Http\Controllers\ProfileController;
     use App\Http\Controllers\ChirpController;
+    use App\Http\Controllers\ProfessorController;
+    use App\Http\Controllers\VacantController;
     use Illuminate\Foundation\Application;
     use Illuminate\Support\Facades\Route;
     use Inertia\Inertia;
@@ -43,4 +45,13 @@
     Route::resource('chirps', ChirpController::class)
         ->only(['index', 'store', 'update', 'destroy', 'like'])
         ->middleware(['auth', 'verified']);
+
+    Route::resource('professors', ProfessorController::class)
+        ->only(['index', 'store', 'update', 'destroy'])
+        ->middleware(['auth', 'verified']);
+
+    Route::resource('jobs', VacantController::class)
+        ->only(['index', 'store', 'update', 'destroy'])
+        ->middleware(['auth', 'verified']);
+        
     require __DIR__.'/auth.php';
