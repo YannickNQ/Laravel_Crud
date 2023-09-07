@@ -3,7 +3,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import InputError from "@/Components/InputError";
 import PrimaryButton from "@/Components/PrimaryButton";
 import { useForm, Head} from '@inertiajs/react';
-// import Vacant from '@/Components/Vacant';
+import Vacant from '@/Components/Vacant';
 import Modal from '@/Components/Modal';
 
 export default function Index({ auth, vacants}){
@@ -27,7 +27,10 @@ export default function Index({ auth, vacants}){
 
     const submit = (e) => {
         e.preventDefault();
-        post(route('vacants.store'), {onSuccess: () => reset() });
+        post(route('vacants.store'), {onSuccess: () => {
+            reset();
+            handleCloseModal();
+        }});
     };
 
     return (
@@ -50,24 +53,26 @@ export default function Index({ auth, vacants}){
                             <textarea value={data.description} name="description" placeholder="Descripción" onChange= { e => setData('description', e.target.value)} className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg"></textarea>
                             <input value={data.date_end} type="date" name="date_end" onChange= { e => setData('date_end', e.target.value)} placeholder="Fecha de finalización" className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg" />
                             <div className="flex justify-end mt-4">
-                                <PrimaryButton className="mt-4" disabled={processing}>Aceptar</PrimaryButton>
+                                <PrimaryButton className="mt-4 bg" disabled={processing}>Aceptar</PrimaryButton>
                                 <PrimaryButton className="mt-4 ml-4" onClick = {handleCloseModal} disabled={processing}>Cancelar</PrimaryButton>
                             </div>
                         </form>
                     </div>
                 </Modal>}
                 
-            <div className="flex-1 box-content h-32 w-auto p-4 border-4">
-                <table className="w-full">
+            <div className="flex-1 box-content w-auto p-4 border-4">
+                <table className="w-full h-auto">
                     <thead className="bg-gray-50 border-b-2 border-gray-200">
                         <tr>
-                        <th className="p-3 text-sm font-semibold tracking-wide text-left">Ofertas de Trabajo</th>
-                        <th className="bg-gray-50 border-b-2 border-gray-200 text-indigo-800">Fecha Limite</th>
+                            <th className="p-3 text-sm font-semibold tracking-wide text-left">Ofertas de Trabajo</th>
+                            <th className="bg-gray-50 border-b-2 border-gray-200 text-indigo-800">Fecha Limite</th>
                         </tr>
                     </thead>
-                    <tbody>
 
-                        {/* Components */}
+                    <tbody>
+                        {vacants.map(vacant =>
+                            <Vacant key={vacant.id} vacant={vacant}></Vacant>
+                        )}
                     </tbody>
                 </table>
             </div>

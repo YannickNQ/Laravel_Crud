@@ -17,7 +17,7 @@ class VacantController extends Controller
     public function index() : Response
     {
         return Inertia::render('Vacant/Index', [
-            // 'vacants' => Vacant::with('')->latest()->get(),
+            'vacants' => Vacant::with('user:id,name')->latest()->get(),
         ]); 
     }
 

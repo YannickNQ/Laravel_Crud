@@ -25,7 +25,7 @@ export default function Index({ auth, chirps }){
                     <input
                         value={data.title}
                         placeholder = "¿Titulo?"
-                        className='block w-full border-gray-300 focus:ring focux:ring-indigo-200 focus:ring-opcaity-50 rounded-md shadow-sm'
+                        className='mb-4 block w-full border-gray-300 focus:ring focux:ring-indigo-200 focus:ring-opcaity-50 rounded-md shadow-sm'
                         onChange= { e => setData('title', e.target.value)}
                     />
                     <textarea
