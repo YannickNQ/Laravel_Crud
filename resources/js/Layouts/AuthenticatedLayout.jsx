@@ -25,7 +25,7 @@ export default function Authenticated({ user, header, children }) {
                                     Dashboard
                                 </NavLink>
                                 <NavLink href={route('chirps.index')} active={route().current('chirps.index')}>
-                                    Chirps
+                                    Foros
                                 </NavLink>
                                 <NavLink href={route('jobs.index')} active={route().current('jobs.index')}>
                                     Vacantes

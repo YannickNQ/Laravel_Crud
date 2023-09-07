@@ -32,9 +32,18 @@ class VacantController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request) : RedirectResponse
     {
-        //
+        $validated = $request->validate([
+            'area' => 'required|string|max:255',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'end_date' => 'required',
+        ]);
+
+        $request->user()->vacants()->create($validated);
+
+        return redirect(route('vacants.index'));
     }
 
     /**
