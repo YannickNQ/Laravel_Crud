@@ -67,6 +67,18 @@ class VacantController extends Controller
      */
     public function update(Request $request, Vacant $vacant)
     {
+        $this->authorize('update', $vacant);
+ 
+        $validated = $request->validate([
+            'area' => 'required|string|max:255',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'date_end' => 'required',
+        ]);
+ 
+        $vacant->update($validated);
+ 
+        return redirect(route('vacants.index'));
         //
     }
 
