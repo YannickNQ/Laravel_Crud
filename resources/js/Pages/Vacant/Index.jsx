@@ -34,7 +34,7 @@ export default function Index({ auth, vacants}){
         <AuthenticatedLayout user = { auth.user }>
             <Head title="Trabajos Disponibles" />
         
-        <div className="flex-wrap-reverse justify-center h-screen">
+        <div className="flex-wrap-reverse justify-center max-w-7xl px-4 mx-auto">
 
             <div className="flex justify-end box-content p-4 border-4">
                 <PrimaryButton onClick={handleOpenModal}>Agregar Vacante</PrimaryButton>
@@ -44,11 +44,11 @@ export default function Index({ auth, vacants}){
                 <Modal show={showModal} onClose={handleCloseModal}>
                     <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
                         <form onSubmit={submit}>
-                            <h2>Agregar Vacante</h2>
-                            <input value={data.area} type="text" name="area" placeholder="Área"  onChange= { e => setData('area', e.target.value)} className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg" />
-                            <input value={data.title} type="text" name="title" placeholder="Título" onChange= { e => setData('title', e.target.value)} className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg" />
-                            <textarea value={data.description} name="description" placeholder="Descripción" onChange= { e => setData('description', e.target.value)} className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg"></textarea>
-                            <input value={data.date_end} type="date" name="date_end" onChange= { e => setData('date_end', e.target.value)} placeholder="Fecha de finalización" className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg" />
+                            <h2 className="text-center pb-2 text-blue-800 font-bold uppercase text-lg">Agregar Vacante</h2>
+                            <input value={data.area} type="text" name="area" placeholder="Área"  onChange= { e => setData('area', e.target.value)} className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg" />
+                            <input value={data.title} type="text" name="title" placeholder="Título" onChange= { e => setData('title', e.target.value)} className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg" />
+                            <textarea value={data.description} name="description" placeholder="Descripción" onChange= { e => setData('description', e.target.value)} className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg"></textarea>
+                            <input value={data.date_end} type="date" name="date_end" onChange= { e => setData('date_end', e.target.value)} placeholder="Fecha de finalización" className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg" />
                             <div className="flex justify-end mt-4">
                                 <PrimaryButton className="mt-4" disabled={processing}>Aceptar</PrimaryButton>
                                 <PrimaryButton className="mt-4 ml-4" onClick = {handleCloseModal} disabled={processing}>Cancelar</PrimaryButton>
@@ -66,6 +66,7 @@ export default function Index({ auth, vacants}){
                         </tr>
                     </thead>
                     <tbody>
+
                         {/* Components */}
                     </tbody>
                 </table>
