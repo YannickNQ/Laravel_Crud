@@ -17,7 +17,7 @@ class VacantController extends Controller
     public function index() : Response
     {
         return Inertia::render('Vacant/Index', [
-            'vacants' => Vacant::with('')->latest()->get(),
+            // 'vacants' => Vacant::with('')->latest()->get(),
         ]); 
     }
 
@@ -38,7 +38,7 @@ class VacantController extends Controller
             'area' => 'required|string|max:255',
             'title' => 'required|string|max:255',
             'description' => 'required|string|max:255',
-            'end_date' => 'required',
+            'date_end' => 'required',
         ]);
 
         $request->user()->vacants()->create($validated);

@@ -27,22 +27,23 @@ export default function Index({ auth, vacants}){
 
     const submit = (e) => {
         e.preventDefault();
-        post(route('professors.store'), {onSuccess: () => reset() });
+        post(route('vacants.store'), {onSuccess: () => reset() });
     };
 
     return (
         <AuthenticatedLayout user = { auth.user }>
             <Head title="Trabajos Disponibles" />
-            <PrimaryButton onClick = {handleOpenModal}> Agregar Vacante</PrimaryButton>
+            <PrimaryButton onClick={handleOpenModal}>Agregar Vacante</PrimaryButton>
+
             {showModal && 
                 <Modal show={showModal} onClose={handleCloseModal}>
                     <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
                         <form onSubmit={submit}>
                             <h2>Agregar Vacante</h2>
-                            <input type="text" name="area" placeholder="Área" className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg" />
-                            <input type="text" name="title" placeholder="Título" className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg" />
-                            <textarea name="description" placeholder="Descripción" className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg"></textarea>
-                            <input type="date" name="date_end" placeholder="Fecha de finalización" className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg" />
+                            <input value={data.area} type="text" name="area" placeholder="Área"  onChange= { e => setData('area', e.target.value)} className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg" />
+                            <input value={data.title} type="text" name="title" placeholder="Título" onChange= { e => setData('title', e.target.value)} className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg" />
+                            <textarea value={data.description} name="description" placeholder="Descripción" onChange= { e => setData('description', e.target.value)} className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg"></textarea>
+                            <input value={data.date_end} type="date" name="date_end" onChange= { e => setData('date_end', e.target.value)} placeholder="Fecha de finalización" className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg" />
                             <div className="flex justify-end mt-4">
                                 <PrimaryButton className="mt-4" disabled={processing}>Aceptar</PrimaryButton>
                                 {/* <PrimaryButton className="mt-4 ml-4" onClick = {handleCloseModal} disabled={processing}>Cancelar</PrimaryButton> */}
@@ -50,6 +51,7 @@ export default function Index({ auth, vacants}){
                         </form>
                     </div>
                 </Modal>}
+
         </AuthenticatedLayout>
     );
 };

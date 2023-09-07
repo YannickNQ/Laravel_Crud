@@ -27,7 +27,7 @@ export default function Authenticated({ user, header, children }) {
                                 <NavLink href={route('chirps.index')} active={route().current('chirps.index')}>
                                     Foros
                                 </NavLink>
-                                <NavLink href={route('jobs.index')} active={route().current('jobs.index')}>
+                                <NavLink href={route('vacants.index')} active={route().current('vacants.index')}>
                                     Vacantes
                                 </NavLink>
                             </div>
