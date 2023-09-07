@@ -33,7 +33,12 @@ export default function Index({ auth, vacants}){
     return (
         <AuthenticatedLayout user = { auth.user }>
             <Head title="Trabajos Disponibles" />
-            <PrimaryButton onClick={handleOpenModal}>Agregar Vacante</PrimaryButton>
+        
+        <div className="flex-wrap-reverse justify-center h-screen">
+
+            <div className="flex justify-end box-content p-4 border-4">
+                <PrimaryButton onClick={handleOpenModal}>Agregar Vacante</PrimaryButton>
+            </div>            
 
             {showModal && 
                 <Modal show={showModal} onClose={handleCloseModal}>
@@ -46,12 +51,26 @@ export default function Index({ auth, vacants}){
                             <input value={data.date_end} type="date" name="date_end" onChange= { e => setData('date_end', e.target.value)} placeholder="Fecha de finalización" className="w-full px-4 py-2 mb-4 border border-gray-300 rounded-lg" />
                             <div className="flex justify-end mt-4">
                                 <PrimaryButton className="mt-4" disabled={processing}>Aceptar</PrimaryButton>
-                                {/* <PrimaryButton className="mt-4 ml-4" onClick = {handleCloseModal} disabled={processing}>Cancelar</PrimaryButton> */}
+                                <PrimaryButton className="mt-4 ml-4" onClick = {handleCloseModal} disabled={processing}>Cancelar</PrimaryButton>
                             </div>
                         </form>
                     </div>
                 </Modal>}
-
+                
+            <div className="flex-1 box-content h-32 w-auto p-4 border-4">
+                <table className="w-full">
+                    <thead className="bg-gray-50 border-b-2 border-gray-200">
+                        <tr>
+                        <th className="p-3 text-sm font-semibold tracking-wide text-left">Ofertas de Trabajo</th>
+                        <th className="bg-gray-50 border-b-2 border-gray-200 text-indigo-800">Fecha Limite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {/* Components */}
+                    </tbody>
+                </table>
+            </div>
+        </div>
         </AuthenticatedLayout>
     );
 };
