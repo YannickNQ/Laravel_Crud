@@ -8,25 +8,22 @@ export default function Vacant({ vacant }){
     const [editing, setEditing] = useState(false);
 
     const { data, setData, post, processing, reset, errors} = useForm({
-        area: '',
-        title: '',
-        description: '',
-        date_end: '',
+        area: vacant.area,
+        title: vacant.title,
+        description: vacant.description,
+        date_end: vacant.date_end,
     });
 
     const submit = (e) => {
         e.preventDefault();
-        post(route('vacants.store'), {onSuccess: () => reset() });
+        post(route('vacants.update'), {onSuccess: () => reset() });
     };
 
     return (
-        <div className="p-6 space-x-2">
-            <div className="flex-1">
-                
-            </div>
-            <div className="flex-1">
-                
-            </div>
-        </div>
-    )
+        <tr>
+            <td>{vacant.title}</td>
+            <td>{vacant.description}</td>
+            <td>{vacant.date_end}</td>
+        </tr>
+    );
 }

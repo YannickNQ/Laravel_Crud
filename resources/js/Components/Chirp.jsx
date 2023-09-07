@@ -73,7 +73,7 @@ export default function Chirp({ chirp }) {
                         </div>
                     </form>
                     : <div >
-                        <span className="mt-4 text-lg font-bold text-gray-800">{data.title}</span>
+                        <span className="mt-4 text-lg font-bold text-gray-800">{chirp.title}</span>
                         <p className="mt-2 text-lg text-gray-900">{chirp.message}</p>
                     </div>
                 }
