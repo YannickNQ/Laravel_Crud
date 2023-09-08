@@ -68,8 +68,9 @@ export default function Index({ auth, vacants}){
                 <table className="w-full h-auto">
                     <thead className="bg-gray-50 border-b-2 border-gray-200">
                         <tr>
-                            <th className="rounded-lg p-4 w-auto text-base font-bold tracking-wide text-gray-800 text-left">Ofertas de Trabajo</th>
+                            <th className="rounded-lg p-4 w-auto min-w-160 text-base font-bold tracking-wide text-gray-800 text-left">Ofertas de Trabajo</th>
                             <th className="bg-gray-50 w-52 text-base border-b-2 border-gray-200 text-gray-800 text-center">Fecha Limite</th>
+                            <th className="bg-gray-50 w-52 text-base border-b-2 border-gray-200 text-gray-800 text-center">Acciones</th>
                         </tr>
                     </thead>
 

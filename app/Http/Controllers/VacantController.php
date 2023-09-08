@@ -65,14 +65,14 @@ class VacantController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Vacant $vacant)
+    public function update(Request $request, Vacant $vacant) : RedirectResponse
     {
         $this->authorize('update', $vacant);
  
         $validated = $request->validate([
             'area' => 'required|string|max:255',
             'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'required',
             'date_end' => 'required',
         ]);
  
@@ -85,8 +85,12 @@ class VacantController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Vacant $vacant)
+    public function destroy(Vacant $vacant) : RedirectResponse
     {
-        //
+        $this->authorize('delete', $vacant);
+
+        $vacant->delete();
+
+        return redirect(route('vacants.index'));
     }
 }
