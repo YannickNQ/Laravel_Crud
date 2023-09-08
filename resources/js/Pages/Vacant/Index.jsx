@@ -47,14 +47,18 @@ export default function Index({ auth, vacants}){
                 <Modal show={showModal} onClose={handleCloseModal}>
                     <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
                         <form onSubmit={submit}>
-                            <h2 className="text-center pb-2 text-blue-800 font-bold uppercase text-lg">Agregar Vacante</h2>
+                            <h2 className="text-center pb-2 text-gray-800 font-bold uppercase text-lg">Agregar Vacante</h2>
+                            <label className="font-medium mb-2 flex">Area</label>
                             <input value={data.area} type="text" name="area" placeholder="Área"  onChange= { e => setData('area', e.target.value)} className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg" />
+                            <label className="font-medium mb-2 flex">Titulo</label>
                             <input value={data.title} type="text" name="title" placeholder="Título" onChange= { e => setData('title', e.target.value)} className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg" />
+                            <label className="font-medium mb-2 flex">Descripción</label>
                             <textarea value={data.description} name="description" placeholder="Descripción" onChange= { e => setData('description', e.target.value)} className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg"></textarea>
+                            <label className="font-medium mb-2 flex">Fecha Limite</label>
                             <input value={data.date_end} type="date" name="date_end" onChange= { e => setData('date_end', e.target.value)} placeholder="Fecha de finalización" className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg" />
                             <div className="flex justify-end mt-4">
-                                <PrimaryButton className="mt-4 bg" disabled={processing}>Aceptar</PrimaryButton>
-                                <PrimaryButton className="mt-4 ml-4" onClick = {handleCloseModal} disabled={processing}>Cancelar</PrimaryButton>
+                                <PrimaryButton className="mt-4" disabled={processing}>Aceptar</PrimaryButton>
+                                <PrimaryButton className="mt-4 ml-4 bg-red-700" onClick = {handleCloseModal} disabled={processing}>Cancelar</PrimaryButton>
                             </div>
                         </form>
                     </div>
