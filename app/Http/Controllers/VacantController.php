@@ -37,7 +37,7 @@ class VacantController extends Controller
         $validated = $request->validate([
             'area' => 'required|string|max:255',
             'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'required',
             'date_end' => 'required',
         ]);
 

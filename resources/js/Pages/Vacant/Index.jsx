@@ -39,7 +39,7 @@ export default function Index({ auth, vacants}){
         
         <div className="flex-wrap-reverse justify-center max-w-7xl px-4 mx-auto">
 
-            <div className="flex justify-end box-content p-4 border-4">
+            <div className="flex justify-end box-content p-4 ">
                 <PrimaryButton onClick={handleOpenModal}>Agregar Vacante</PrimaryButton>
             </div>            
 
@@ -53,7 +53,7 @@ export default function Index({ auth, vacants}){
                             <label className="font-medium mb-2 flex">Titulo</label>
                             <input value={data.title} type="text" name="title" placeholder="Título" onChange= { e => setData('title', e.target.value)} className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg" />
                             <label className="font-medium mb-2 flex">Descripción</label>
-                            <textarea value={data.description} name="description" placeholder="Descripción" onChange= { e => setData('description', e.target.value)} className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg"></textarea>
+                            <textarea value={data.description} name="description" placeholder="Descripción" onChange= { e => setData('description', e.target.value)} className="w-full px-4 py-2 h-32 mb-4 border border-blue-300 rounded-lg"></textarea>
                             <label className="font-medium mb-2 flex">Fecha Limite</label>
                             <input value={data.date_end} type="date" name="date_end" onChange= { e => setData('date_end', e.target.value)} placeholder="Fecha de finalización" className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg" />
                             <div className="flex justify-end mt-4">
@@ -64,12 +64,12 @@ export default function Index({ auth, vacants}){
                     </div>
                 </Modal>}
                 
-            <div className="flex-1 box-content w-auto p-4 border-4">
+            <div className="flex-1 box-content w-auto p-4 border-4 rounded-lg">
                 <table className="w-full h-auto">
                     <thead className="bg-gray-50 border-b-2 border-gray-200">
                         <tr>
-                            <th className="p-3 text-sm font-semibold tracking-wide text-left">Ofertas de Trabajo</th>
-                            <th className="bg-gray-50 border-b-2 border-gray-200 text-indigo-800">Fecha Limite</th>
+                            <th className="p-4 w-auto text-base font-bold tracking-wide text-gray-800 text-left">Ofertas de Trabajo</th>
+                            <th className="bg-gray-50 w-52 text-base border-b-2 border-gray-200 text-gray-800 text-center">Fecha Limite</th>
                         </tr>
                     </thead>
 
