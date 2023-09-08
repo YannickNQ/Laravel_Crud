@@ -64,11 +64,11 @@ export default function Index({ auth, vacants}){
                     </div>
                 </Modal>}
                 
-            <div className=" bg-white overflow-hidden shadow-sm sm:rounded-lg flex-1 box-content w-auto p-4 ">
+            <div className="bg-white overflow-hidden shadow-sm rounded-lg flex-1 box-content w-auto p-4 ">
                 <table className="w-full h-auto">
                     <thead className="bg-gray-50 border-b-2 border-gray-200">
                         <tr>
-                            <th className="p-4 w-auto text-base font-bold tracking-wide text-gray-800 text-left">Ofertas de Trabajo</th>
+                            <th className="rounded-lg p-4 w-auto text-base font-bold tracking-wide text-gray-800 text-left">Ofertas de Trabajo</th>
                             <th className="bg-gray-50 w-52 text-base border-b-2 border-gray-200 text-gray-800 text-center">Fecha Limite</th>
                         </tr>
                     </thead>
