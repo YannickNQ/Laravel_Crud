@@ -64,7 +64,7 @@ export default function Index({ auth, vacants}){
                     </div>
                 </Modal>}
                 
-            <div className="flex-1 box-content w-auto p-4 border-4 rounded-lg">
+            <div className=" bg-white overflow-hidden shadow-sm sm:rounded-lg flex-1 box-content w-auto p-4 ">
                 <table className="w-full h-auto">
                     <thead className="bg-gray-50 border-b-2 border-gray-200">
                         <tr>
