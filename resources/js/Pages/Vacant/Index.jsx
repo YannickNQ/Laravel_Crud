@@ -15,6 +15,8 @@ export default function Index({ auth, vacants}){
     };
 
     const handleCloseModal = () => {
+        reset();
+        clearErrors();
         setShowModal(false);
     };
 
@@ -28,7 +30,6 @@ export default function Index({ auth, vacants}){
     const submit = (e) => {
         e.preventDefault();
         post(route('vacants.store'), {onSuccess: () => {
-            reset();
             handleCloseModal();
         }});
     };
@@ -58,7 +59,7 @@ export default function Index({ auth, vacants}){
                             <input value={data.date_end} type="date" name="date_end" onChange= { e => setData('date_end', e.target.value)} placeholder="Fecha de finalización" className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg" />
                             <div className="flex justify-end mt-4">
                                 <PrimaryButton className="mt-4" disabled={processing}>Aceptar</PrimaryButton>
-                                <PrimaryButton className="mt-4 ml-4 bg-red-700" onClick = {handleCloseModal} disabled={processing}>Cancelar</PrimaryButton>
+                                <PrimaryButton className="mt-4 ml-4 bg-red-700" onClick = {handleCloseModal}>Cancelar</PrimaryButton>
                             </div>
                         </form>
                     </div>
