@@ -6,12 +6,6 @@ import InputError from "./InputError";
 
 export default function Vacant({ vacant }) {
 
-    // Variables
-
-    const { auth } = usePage().props;
-
-    const [editing, setEditing] = useState(false);
-
     const [showMore, setShowMore] = useState(false);
 
     const [ showModal, setShowModal ] = useState(false);
@@ -34,12 +28,10 @@ export default function Vacant({ vacant }) {
     };
 
     const openModal = () => {
-        setEditing(true);
         setShowModal(true);
     };
 
     const closeModal = () => {
-        setEditing(false);
         setShowModal(false);
         reset();
         clearErrors();
@@ -49,7 +41,7 @@ export default function Vacant({ vacant }) {
 
     const submit = (e) => {
         e.preventDefault();
-        patch(route('vacants.update', vacant.id), { onSuccess: () => setEditing(false)});
+        patch(route('vacants.update', vacant.id), { onSuccess: () => setShowModal(false)});
     };
     
     const deleteVacant = (e) => {
@@ -109,8 +101,7 @@ export default function Vacant({ vacant }) {
                         </svg>
                     </PrimaryButton>
                 </div>
-                {editing ? 
-                    showModal &&
+                {showModal ?
                     <Modal show={showModal} onClose={closeModal}>
                         <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
                             <form onSubmit={submit}>
