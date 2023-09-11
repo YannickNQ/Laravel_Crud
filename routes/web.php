@@ -17,9 +17,9 @@
         ]);
     });
 
-    Route::get('/Test', function(){
-        return Inertia::render('Welcome2');
-    });
+    Route::get('/mydashboard', function () {
+        return Inertia::render('MyDashboard');
+    })->middleware(['auth', 'verified'])->name('mydashboard');
 
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');

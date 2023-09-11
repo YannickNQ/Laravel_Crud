@@ -28,6 +28,7 @@ export default function Index({ auth, chirps }){
                         className='mb-4 block w-full border-gray-300 focus:ring focux:ring-indigo-200 focus:ring-opcaity-50 rounded-md shadow-sm'
                         onChange= { e => setData('title', e.target.value)}
                     />
+                    <InputError message = {errors.title}  className="mt-2" />
                     <textarea
                         value = {data.message}
                         placeholder = "¿En que estas pensando?"
@@ -35,7 +36,7 @@ export default function Index({ auth, chirps }){
                         onChange={ e => setData('message', e.target.value)}
                     ></textarea>
                     <InputError message = {errors.message}  className="mt-2" />
-                    <PrimaryButton className="mt-4" disabled={processing}>Comentar</PrimaryButton>
+                    <PrimaryButton type = "submit" className="mt-4" disabled={processing}>Comentar</PrimaryButton>
                 </form>
 
                 <div className="mt-6 bg-white shadow-sm rounded-lg divide-y">

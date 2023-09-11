@@ -2,6 +2,7 @@ import { useForm, usePage } from "@inertiajs/react";
 import React, { useState } from "react";
 import PrimaryButton from "./PrimaryButton";
 import Modal from "./Modal";
+import InputError from "./InputError";
 
 export default function Vacant({ vacant }) {
 
@@ -118,10 +119,13 @@ export default function Vacant({ vacant }) {
                                 <input value={data.area} type="text" name="area" placeholder="Área"  onChange= { e => setData('area', e.target.value)} className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg" />
                                 <label className="font-medium mb-2 flex">Titulo</label>
                                 <input value={data.title} type="text" name="title" placeholder="Título" onChange= { e => setData('title', e.target.value)} className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg" />
+                                <InputError message={errors.message} className="mt-2" />
                                 <label className="font-medium mb-2 flex">Descripción</label>
                                 <textarea value={data.description} name="description" placeholder="Descripción" onChange= { e => setData('description', e.target.value)} className="w-full px-4 py-2 h-32 mb-4 border border-blue-300 rounded-lg"></textarea>
+                                <InputError message={errors.message} className="mt-2" />
                                 <label className="font-medium mb-2 flex">Fecha Limite</label>
                                 <input value={data.date_end} type="date" name="date_end" onChange= { e => setData('date_end', e.target.value)} className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg" />
+                                <InputError message={errors.message} className="mt-2" />
                                 <div className="flex justify-end mt-4">
                                     <PrimaryButton type="submit" className="mt-4" >Guardar</PrimaryButton>
                                     <PrimaryButton type="button" className="mt-4 ml-4 bg-red-700 hover:bg-red-500 focus:bg-red-700 active:bg-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150" onClick = {closeModal}>Cancelar</PrimaryButton>
