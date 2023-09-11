@@ -1,6 +1,12 @@
 import React, {} from "react";
 
 function SearchBar ({ placeholder, data }){
+
+    const handleFilter = (e) => {
+        const search = e.target.value;
+
+        console.log(search);
+    }
     return (
         <div className="w-6/12 flex items-center">
             <div className="flex w-full space-x-2">
@@ -8,6 +14,7 @@ function SearchBar ({ placeholder, data }){
                     type="text"
                     className="block w-full px-4 py-2 text-gray-500 bg-white border rounded-full focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                     placeholder={placeholder}
+                    onChange={handleFilter}
                 />
                 <button className="px-4 text-white bg-gray-800 rounded-full ">
                     <svg
