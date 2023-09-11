@@ -4,6 +4,7 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head, useForm } from "@inertiajs/react";
 import React, { useState } from "react";
+import SearchBar from "@/Components/SearchBar";
 
 export default function Index( {auth, vacants})
 {
@@ -37,8 +38,9 @@ export default function Index( {auth, vacants})
         <AuthenticatedLayout
             user={auth.user}
             header={
-                <div className="flex justify-between">
+                <div className="flex justify-between items-center">
                     <h2 className="font-semibold text-xl text-gray-800 leading-tight">Vacantes</h2>
+                    <SearchBar placeholder="Buscar"/>
                     <PrimaryButton className = "py-2" onClick={handleOpenModal}>Agregar Vacante</PrimaryButton>
                 </div>
         }
