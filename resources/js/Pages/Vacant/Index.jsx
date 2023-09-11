@@ -34,12 +34,18 @@ export default function Index( {auth, vacants})
     };
     
     return(
-        <AuthenticatedLayout user = {auth.user}>
-            <Head title="Trabajos Disponibles" />
-            <div className="flex-wrap-reverse justify-center max-w-7xl px-4 mx-auto">
-                <div className="flex justify-end">
-                    <PrimaryButton className="m-4" onClick={handleOpenModal}>Agregar Vacante</PrimaryButton>
+        <AuthenticatedLayout
+            user={auth.user}
+            header={
+                <div className="flex justify-between">
+                    <h2 className="font-semibold text-xl text-gray-800 leading-tight">Vacantes</h2>
+                    <PrimaryButton className = "py-2" onClick={handleOpenModal}>Agregar Vacante</PrimaryButton>
                 </div>
+        }
+        >
+            <Head title = "Jobs" />
+            <div className="flex-wrap-reverse justify-center max-w-7xl px-4 py-6 mx-auto">
+                
                 <div className="bg-white shadow-sm rounded-lg box-content w-auto p-4">
                     <table className="w-full h-auto">
                         <thead className="bg-gray-50 border-b-2 border-gray-200">
@@ -72,7 +78,7 @@ export default function Index( {auth, vacants})
                             <input type="date" id='date_end' name="date_end" value={data.date_end} onChange={ e => setData('date_end', e.target.value)} className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg"/>
                             <div className="flex justify-end space-x-2">
                                 <PrimaryButton type="submit" disabled={processing} className="">Aceptar</PrimaryButton>
-                                <PrimaryButton type="button" onClick={handleCloseModal} className="bg-red-700">Cancelar</PrimaryButton>
+                                <PrimaryButton type="button" onClick={handleCloseModal} className="bg-red-700 hover:bg-red-500 focus:bg-red-700 active:bg-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150">Cancelar</PrimaryButton>
                             </div>
                         </form>
                     </div>

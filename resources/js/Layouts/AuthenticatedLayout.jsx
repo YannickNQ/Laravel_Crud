@@ -104,6 +104,9 @@ export default function Authenticated({ user, header, children }) {
                         <ResponsiveNavLink href={route('chirps.index')} active={route().current('chirps.index')}> 
                             Chirps
                         </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('vacants.index')} active={route().current('vacants.index')}> 
+                            Vacantes
+                        </ResponsiveNavLink>
                     </div>
 
                     <div className="pt-4 pb-1 border-t border-gray-200">

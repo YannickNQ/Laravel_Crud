@@ -57,9 +57,9 @@ export default function Vacant({ vacant }) {
     }
 
     return (
-        <tr className="text-sm">
-            <td className="pt-2">
-                <p className="font-semibold">{vacant.area}</p>
+        <tr className="text-sm bg-white border-b border-gray-400 hover:bg-gray-100 dark:border-gray-300 dark:hover:bg-gray-100">
+            <td className="p-4">
+                <p className="font-semibold text-gray-700">{vacant.area}</p>
                 {showMore && (
                     <>
                         <p className="uppercase">{vacant.title}</p>
@@ -75,10 +75,10 @@ export default function Vacant({ vacant }) {
                 <span className="font-bold"> | </span>
                 <button className="text-red-600 underline">Postular</button>
             </td>
-            <td className="text-center pt-2">{vacant.date_end}</td>
-            <td>
-                <div className="h-auto flex items-center justify-center text-center pt-2 space-x-2">
-                    <PrimaryButton className="bg-green-700 after:content-[''] md:after:content-['Editar']" onClick={() => openModal()}>
+            <td className="text-center p-4">{vacant.date_end}</td>
+            <td className="p-4">
+                <div className="h-auto flex items-center justify-center text-center space-x-2">
+                    <PrimaryButton className="bg-green-700 after:content-[''] md:after:content-['Editar'] hover:bg-green-500 focus:bg-green-700 active:bg-green-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition ease-in-out duration-150" onClick={() => openModal()}>
                         <svg
                             className="w-3.5 h-3.5 md:mr-2"
                             aria-hidden="true"
@@ -90,7 +90,7 @@ export default function Vacant({ vacant }) {
                             <path d="M13.243 3.2 7.359 9.081a.5.5 0 0 0-.136.256L6.51 12.9a.5.5 0 0 0 .59.59l3.566-.713a.5.5 0 0 0 .255-.136L16.8 6.757 13.243 3.2Z" />
                         </svg>
                     </PrimaryButton>
-                    <PrimaryButton as="button" onClick = {deleteVacant} method="delete" className="bg-red-800 after:content-[''] md:after:content-['Eliminar']">
+                    <PrimaryButton as="button" onClick = {deleteVacant} method="delete" className="bg-red-800 after:content-[''] md:after:content-['Eliminar'] hover:bg-red-500 focus:bg-red-700 active:bg-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150">
                         <svg
                             className="w-3.5 h-3.5 md:mr-2"
                             aria-hidden="true"
@@ -124,7 +124,7 @@ export default function Vacant({ vacant }) {
                                 <input value={data.date_end} type="date" name="date_end" onChange= { e => setData('date_end', e.target.value)} className="w-full px-4 py-2 mb-4 border border-blue-300 rounded-lg" />
                                 <div className="flex justify-end mt-4">
                                     <PrimaryButton type="submit" className="mt-4" >Guardar</PrimaryButton>
-                                    <PrimaryButton type="button" className="mt-4 ml-4 bg-red-700" onClick = {closeModal}>Cancelar</PrimaryButton>
+                                    <PrimaryButton type="button" className="mt-4 ml-4 bg-red-700 hover:bg-red-500 focus:bg-red-700 active:bg-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150" onClick = {closeModal}>Cancelar</PrimaryButton>
                                 </div>
                             </form>
                         </div>
