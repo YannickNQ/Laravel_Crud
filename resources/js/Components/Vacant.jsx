@@ -6,6 +6,8 @@ import InputError from "./InputError";
 
 export default function Vacant({ vacant }) {
 
+    const { auth } = usePage().props;
+
     const [showMore, setShowMore] = useState(false);
 
     const [ showModal, setShowModal ] = useState(false);
@@ -50,6 +52,8 @@ export default function Vacant({ vacant }) {
     }
 
     return (
+        <>
+        {vacant.user.id === auth.user.id &&
         <tr className="text-sm bg-white border-b border-gray-400 hover:bg-gray-100 dark:border-gray-300 dark:hover:bg-gray-100">
             <td className="p-4">
                 <p className="font-semibold text-gray-700">{vacant.area}</p>
@@ -128,5 +132,7 @@ export default function Vacant({ vacant }) {
                 }
             </td>
         </tr>
+        }
+    </>
     );
 }
