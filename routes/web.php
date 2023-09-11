@@ -32,7 +32,7 @@
     });
 
    Route::resource('vacants', VacantController::class)
-    ->only(['index', 'store', 'edit', 'update', 'destroy'])
+    ->only(['index', 'store', 'edit', 'update', 'destroy', 'show'])
     ->middleware(['auth', 'verified']);
 
  

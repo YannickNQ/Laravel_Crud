@@ -108,10 +108,10 @@ export default function Authenticated({ user, header, children }) {
                             Chirps
                         </ResponsiveNavLink>
                         <ResponsiveNavLink href={route('vacants.index')} active={route().current('vacants.index')}> 
-                            Vacantes
+                            Vacantes Actuales
                         </ResponsiveNavLink>
                         <ResponsiveNavLink href={route('mydashboard')} active={route().current('mydashboard')}> 
-                            Mi Dashboard
+                            Mi Custom Dashboard
                         </ResponsiveNavLink>
                     </div>
 
