@@ -5,8 +5,11 @@ export default function Guest({ children }) {
     return (
         <div className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
-                <Link href="/">
+                <Link href="/" className='flex justify-center'>
                     <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
+                </Link>
+                <Link href="/" className='flex justify-center'>
+                    <span className='text-[#07314A] text-3xl font-bold'>WebDevOps</span>
                 </Link>
             </div>
 
