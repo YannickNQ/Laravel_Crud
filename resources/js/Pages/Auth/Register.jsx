@@ -5,6 +5,7 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
+import SocialButton from '@/Components/SocialButton';
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -29,6 +30,15 @@ export default function Register() {
     return (
         <GuestLayout>
             <Head title="Register" />
+
+            <div className='flex space-x-2 items-center justify-center'>
+                <SocialButton color = "black" type = "github" />
+                <SocialButton color = "	#DB4437" type = "google" />
+                <SocialButton color = "#4267B2" type = "facebook" />
+                        
+            </div>
+
+            <span className='flex items-center justify-center mt-2'>ó</span>
 
             <form onSubmit={submit}>
                 <div>
