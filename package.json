@@ -6,8 +6,11 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@emotion/styled": "^11.11.0",
         "@headlessui/react": "^1.4.2",
         "@inertiajs/react": "^1.0.0",
+        "@mui/material": "^5.14.6",
+        "@mui/styled-engine": "^5.14.6",
         "@tailwindcss/forms": "^0.5.3",
         "@vitejs/plugin-react": "^4.0.3",
         "autoprefixer": "^10.4.12",
@@ -20,8 +23,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "@material/base": "^14.0.0",
-        "@mui/material": "^5.14.6",
+        "@mui/icons-material": "^5.14.6",
         "dayjs": "^1.11.9",
         "styled-components": "^6.0.7",
         "twin.macro": "^3.4.0"
