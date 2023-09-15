@@ -33,7 +33,7 @@ export default function Register() {
 
             <div className='flex space-x-2 items-center justify-center'>
                 <SocialButton color = "black" type = "github" />
-                <SocialButton color = "	#DB4437" type = "google" />
+                <a href="/google-auth/redirect"><SocialButton  color = "	#DB4437" type = "google" /></a>
                 <SocialButton color = "#4267B2" type = "facebook" />
                         
             </div>
