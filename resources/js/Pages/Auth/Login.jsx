@@ -53,7 +53,10 @@ export default function Login({ status, canResetPassword }) {
                 <GuestLayout>
                     <Head title="Log in" />
                     <div className='flex flex-col space-y-2 items-center justify-center'>
-                        <SocialButton color = "black" type = "github" label="Sign In with GitHub"/>
+                        
+
+                        <a href="/github-auth/redirect"><SocialButton color = "black" type = "github" label="Sign In with GitHub"/></a>
+
                         <a href="/google-auth/redirect"><SocialButton color = "	#DB4437" type = "google" label="Sign In with Google"/></a>
                         
                         

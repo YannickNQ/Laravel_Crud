@@ -63,6 +63,27 @@
     });
 
 
+    Route::get('/github-auth/redirect', function () {
+        return Socialite::driver('github')->redirect();
+    });
+     
+    Route::get('/github-auth/callback', function () {
+        $user_github = Socialite::driver('github')->user();
+        $user = User::updateOrCreate([
+            'github_id' => $user_github -> id,
+        ], [
+            'name' => $user_github -> nickname,
+            'email' =>$user_github -> email,
+        ]);
+
+        Auth::login($user);
+
+        return redirect('/dashboard');
+        // dd($user);
+        // $user->token
+    });
+
+
     Route::get('/mydashboard', function () {
         return Inertia::render('MyDashboard');
     })->middleware(['auth', 'verified'])->name('mydashboard');
