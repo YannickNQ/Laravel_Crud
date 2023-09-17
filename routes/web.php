@@ -20,25 +20,25 @@
     });
 
 
-    Route::get('/google-auth/redirect', function () {
-        return Socialite::driver('google')->redirect();
-    });
+    // Route::get('/google-auth/redirect', function () {
+    //     return Socialite::driver('google')->redirect();
+    // });
      
-    Route::get('/google-auth/callback', function () {
-        $user_google = Socialite::driver('google')->stateless()->user();
-        $user = User::updateOrCreate([
-            'google_id' => $user_google -> id,
-        ], [
-            'name' => $user_google -> name,
-            'email' =>$user_google -> email,
-        ]);
+    // Route::get('/google-auth/callback', function () {
+    //     $user_google = Socialite::driver('google')->stateless()->user();
+    //     $user = User::updateOrCreate([
+    //         'google_id' => $user_google -> id,
+    //     ], [
+    //         'name' => $user_google -> name,
+    //         'email' =>$user_google -> email,
+    //     ]);
 
-        Auth::login($user);
+    //     Auth::login($user);
 
-        return redirect('/dashboard');
-        // dd($user);
-        // $user->token
-    });
+    //     return redirect('/dashboard');
+    //     // dd($user);
+    //     // $user->token
+    // });
 
     Route::get('/auth/{social}/redirect', [SocialController::class, 'redirect']);
 
