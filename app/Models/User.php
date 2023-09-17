@@ -22,9 +22,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'google_id',
-        'facebook_id',
-        'github_id',
+        // 'username',
+        'social',
+        'social_id',
+        'social_token',
     ];
 
     /**
@@ -55,4 +56,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Vacant::class);
     }
+
+
+
+
 }

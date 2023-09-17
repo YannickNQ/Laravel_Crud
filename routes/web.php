@@ -4,12 +4,10 @@
     use App\Http\Controllers\ChirpController;
     use App\Http\Controllers\ProfessorController;
     use App\Http\Controllers\VacantController;
+    use App\Http\Controllers\Auth\SocialController;
     use Illuminate\Foundation\Application;
     use Illuminate\Support\Facades\Route;
     use Inertia\Inertia;
-    use Laravel\Socialite\Facades\Socialite;
-    use App\Models\User;
-    use Illuminate\Support\Facades\Auth;
 
 
     Route::get('/', function () {
@@ -42,47 +40,9 @@
         // $user->token
     });
 
-    Route::get('/facebook-auth/redirect', function () {
-        return Socialite::driver('facebook')->redirect();
-    });
-     
-    Route::get('/facebook-auth/callback', function () {
-        $user_facebook = Socialite::driver('facebook')->stateless()->user();
-        $user = User::updateOrCreate([
-            'facebook_id' => $user_facebook -> id,
-        ], [
-            'name' => $user_facebook -> name,
-            'email' =>$user_facebook -> email,
-        ]);
+    Route::get('/auth/{social}/redirect', [SocialController::class, 'redirect']);
 
-        Auth::login($user);
-
-        return redirect('/dashboard');
-        // dd($user);
-        // $user->token
-    });
-
-
-    Route::get('/github-auth/redirect', function () {
-        return Socialite::driver('github')->redirect();
-    });
-     
-    Route::get('/github-auth/callback', function () {
-        $user_github = Socialite::driver('github')->user();
-        $user = User::updateOrCreate([
-            'github_id' => $user_github -> id,
-        ], [
-            'name' => $user_github -> nickname,
-            'email' =>$user_github -> email,
-        ]);
-
-        Auth::login($user);
-
-        return redirect('/dashboard');
-        // dd($user);
-        // $user->token
-    });
-
+    Route::get('/auth/{social}/callback', [SocialController::class, 'callback']);
 
     Route::get('/mydashboard', function () {
         return Inertia::render('MyDashboard');

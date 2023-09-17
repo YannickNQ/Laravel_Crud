@@ -33,9 +33,9 @@ export default function Register() {
 
             <div className='flex space-x-2 items-center justify-center'>
                 
-                <a href="/github-auth/redirect"><SocialButton color = "black" type = "github" /></a>
-                <a href="/google-auth/redirect"><SocialButton  color = "	#DB4437" type = "google" /></a>
-                <a href="/facebook-auth/redirect"><SocialButton color = "#4267B2" type = "facebook" /></a>
+                <a href="/auth/github/redirect"><SocialButton color = "black" type = "github" /></a>
+                <a href="/auth/google/redirect"><SocialButton  color = "	#DB4437" type = "google" /></a>
+                <a href="/auth/facebook/redirect"><SocialButton color = "#4267B2" type = "facebook" /></a>
                         
             </div>
 

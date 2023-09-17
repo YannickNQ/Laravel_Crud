@@ -55,12 +55,11 @@ export default function Login({ status, canResetPassword }) {
                     <div className='flex flex-col space-y-2 items-center justify-center'>
                         
 
-                        <a href="/github-auth/redirect"><SocialButton color = "black" type = "github" label="Sign In with GitHub"/></a>
+                        <a href="/auth/github/redirect"><SocialButton color = "black" type = "github" label="Sign In with GitHub"/></a>
 
-                        <a href="/google-auth/redirect"><SocialButton color = "	#DB4437" type = "google" label="Sign In with Google"/></a>
+                        <a href="/auth/google/redirect"><SocialButton color = "	#DB4437" type = "google" label="Sign In with Google"/></a>
                         
-                        
-                        <a href="/facebook-auth/redirect"><SocialButton color = "#4267B2" type = "facebook" label="Sign In with Facebook"/></a>
+                        <a href="/auth/facebook/redirect"><SocialButton color = "#4267B2" type = "facebook" label="Sign In with Facebook"/></a>
                         
                     </div>
                     <span className='flex items-center justify-center mt-2'>ó</span>
