@@ -42,6 +42,27 @@
         // $user->token
     });
 
+    Route::get('/facebook-auth/redirect', function () {
+        return Socialite::driver('facebook')->redirect();
+    });
+     
+    Route::get('/facebook-auth/callback', function () {
+        $user_facebook = Socialite::driver('facebook')->stateless()->user();
+        $user = User::updateOrCreate([
+            'facebook_id' => $user_facebook -> id,
+        ], [
+            'name' => $user_facebook -> name,
+            'email' =>$user_facebook -> email,
+        ]);
+
+        Auth::login($user);
+
+        return redirect('/dashboard');
+        // dd($user);
+        // $user->token
+    });
+
+
     Route::get('/mydashboard', function () {
         return Inertia::render('MyDashboard');
     })->middleware(['auth', 'verified'])->name('mydashboard');
