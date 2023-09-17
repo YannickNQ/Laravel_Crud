@@ -3,6 +3,8 @@ CRUD project to practice laravel, inertia, and react
 
 
 .env
+
+
 GOOGLE_CLIENT_ID = 374237047991-rtmb3cgqovl5h14i8seqtkl85p1rg3f2.apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET = 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
 GOOGLE_REDIRECT = http://localhost:8000/auth/google/callback
