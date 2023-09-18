@@ -55,7 +55,7 @@ export default function Login({ status, canResetPassword }) {
                     <div className='flex flex-col space-y-2 items-center justify-center'>
                         
 
-                        <a href="/auth/github/redirect"><SocialButton color = "black" type = "github" label="Sign In with GitHub"/></a>
+                        <a href="/auth/github/redirect"><SocialButton className="text-red-500" type = "github" label="Sign In with GitHub"/></a>
 
                         <a href="/auth/google/redirect"><SocialButton color = "	#DB4437" type = "google" label="Sign In with Google"/></a>
                         

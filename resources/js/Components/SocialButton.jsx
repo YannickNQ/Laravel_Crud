@@ -5,7 +5,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 
-const SocialButton = ({ label, type, color }) => {
+const SocialButton = ({ label, type, className = '', disabled}) => {
   const getIcon = () => {
     switch (type) {
       case 'github':
@@ -20,12 +20,11 @@ const SocialButton = ({ label, type, color }) => {
   };
 
   return (
-    <Button style={{
-      backgroundColor: color,
-      textTransform: 'none',
-      itemsAlign: 'center',
-    }}  variant="contained" startIcon={getIcon()}>
-      {label}
+    <Button 
+      className={ className }
+      disabled={disabled} 
+      startIcon={getIcon()}>
+        {label}
     </Button>
   );
 };
