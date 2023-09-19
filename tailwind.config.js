@@ -19,6 +19,4 @@ export default {
     },
 
     plugins: [forms],
-
-    important: "#app",
 };
