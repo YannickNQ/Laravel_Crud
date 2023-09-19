@@ -62,7 +62,7 @@ export default function DeleteUserForm({ className = '' }) {
                     </h2>
 
                     <p className="mt-1 text-sm text-gray-600">
-                        Una vez que tu cuentaa sea eliminada, todos sus recursos y datos serán permanentemente eliminados. Por favor,
+                        Una vez que tu cuenta sea eliminada, todos sus recursos y datos serán permanentemente eliminados. Por favor,
                         ingresa tu contraseña para confirmar de que quieres eliminar permanentemente tu cuenta.
                     </p>
 
@@ -85,10 +85,10 @@ export default function DeleteUserForm({ className = '' }) {
                     </div>
 
                     <div className="mt-6 flex justify-end">
-                        <SecondaryButton onClick={closeModal}>Cancel</SecondaryButton>
+                        <SecondaryButton onClick={closeModal}>Cancelar</SecondaryButton>
 
                         <DangerButton className="ml-3" disabled={processing}>
-                            Delete Account
+                            Eliminar Cuenta
                         </DangerButton>
                     </div>
                 </form>
