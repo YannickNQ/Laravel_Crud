@@ -1,6 +1,20 @@
+import Modal from '@/Components/Modal';
 import { Link, Head } from '@inertiajs/react';
+import { useState } from 'react';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
+
+    const [showModal, setShowModal] = useState(false);
+
+    const openModal = () =>
+    {
+        setShowModal(true);
+    }
+
+    const closeModal = () =>
+    {
+        setShowModal(false);
+    }
     return (
         <>
             <Head title="Welcome" />
