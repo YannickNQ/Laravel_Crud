@@ -6,7 +6,8 @@
     use App\Http\Controllers\VacantController;
     use App\Http\Controllers\Auth\SocialController;
     use Illuminate\Foundation\Application;
-    use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
     use Inertia\Inertia;
 
 
@@ -51,6 +52,21 @@
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->middleware(['auth', 'verified'])->name('dashboard');
+
+    Route::get('/datatable', function () {
+        return Inertia::render('Datatables');
+    })->middleware(['auth', 'verified'])->name('chirps.datatable');
+    Route::get('/exampleDatatable', function () {
+        return Inertia::render('Examples/datatable');
+    });
+
+    //API
+    Route::prefix('/api')->group(function() {
+        Route::get('/chirps', function() {
+            $chirps = DB::table('chirps')->get();
+            return $chirps;
+        })->name('api.chirps');
+    });
 
     Route::middleware('auth')->group(function () {
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
