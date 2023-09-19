@@ -33,9 +33,9 @@ const SocialButton = ({ label, type, className = '', disabled}) => {
 
   return (
     <Button
-      className= {`flex flex-column border-solid border border-gray-500 space-x-2 items-center justify-center w-full bg-gray-100 ${className} hover:bg-gray-200` }
+      className= {` mx-2 my-2 border-solid border border-gray-500 space-x-2 items-center justify-center w-full bg-gray-100 ${className} hover:bg-gray-200` }
       variant='contained'
-      style={{textTransform: 'none', width: '180px'}}
+      style={{textTransform: 'none', width: 'auto'}}
       fullWidth
       >
           <span>{getIcon()}</span>

@@ -31,13 +31,32 @@ export default function Register() {
         <GuestLayout>
             <Head title="Register" />
 
-            <div className='flex space-x-2 items-center justify-center'>
-                
-                <a href="/auth/github/redirect"><SocialButton color = "black" type = "github" /></a>
-                <a href="/auth/google/redirect"><SocialButton  color = "	#DB4437" type = "google" /></a>
-                <a href="/auth/facebook/redirect"><SocialButton color = "#4267B2" type = "facebook" /></a>
-                        
+            <div className="flex flex-col items-center justify-center">
+                <a href="/auth/github/redirect">
+                    <SocialButton
+                        className="text-black text-center"
+                        type="github"
+                        label="Usar GitHub"
+                    />
+                </a>
+
+                <a href="/auth/google/redirect">
+                    <SocialButton
+                        className="text-black text-center w-full"
+                        type="google"
+                        label="Usar Google"
+                    />
+                </a>
+
+                <a href="/auth/facebook/redirect">
+                    <SocialButton
+                        className="text-black font-normal text-center w-full"
+                        type="facebook"
+                        label="Usar Facebook"
+                    />
+                </a>
             </div>
+
 
             <span className='flex items-center justify-center mt-2'>ó</span>
 
