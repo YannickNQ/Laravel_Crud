@@ -35,8 +35,8 @@ export default function Login({ status, canResetPassword }) {
     return (
         <GuestLayout>
             <Head title="Log in" />
-            <div className="flex flex-col space-y-2 items-center justify-center">
-                <a href="/auth/github/redirect">
+            <div className="flex flex-col">
+                <a href="/auth/github/redirect" className='flex w-full justify-center items-center'>
                     <SocialButton
                         className="text-black"
                         type="github"
@@ -44,7 +44,7 @@ export default function Login({ status, canResetPassword }) {
                     />
                 </a>
 
-                <a href="/auth/google/redirect">
+                <a href="/auth/google/redirect" className='flex w-full justify-center items-center'>
                     <SocialButton
                         className="text-black"
                         type="google"
@@ -52,15 +52,21 @@ export default function Login({ status, canResetPassword }) {
                     />
                 </a>
 
-                <a href="/auth/facebook/redirect">
+                <a href="/auth/facebook/redirect" className='flex w-full justify-center items-center'>
                     <SocialButton
                         className="text-black font-normal"
                         type="facebook"
                         label="Usar Facebook"
                     />
                 </a>
+                <a href="/auth/facebook/redirect" className='flex w-full justify-center items-center'>
+                    <SocialButton
+                        className="text-black font-normal"
+                        type="email"
+                        label="Usar mi correo"
+                    />
+                </a>
             </div>
-            <span className="flex items-center justify-center mt-2">ó</span>
 
             {status && (
                 <div className="mb-4 font-medium text-sm text-green-600">

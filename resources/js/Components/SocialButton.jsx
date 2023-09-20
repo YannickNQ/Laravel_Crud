@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Button } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import EmailIcon from '@mui/icons-material/Email';
 
 const GoogleIcon = () => (
   <svg
@@ -33,6 +34,8 @@ const SocialButton = ({ label, type, className = '', disabled }) => {
         return <GoogleIcon />;
       case 'facebook':
         return <FacebookIcon className='text-blue-500' />;
+      case 'email':
+        return <EmailIcon />;
       default:
         return null;
     }
@@ -40,18 +43,18 @@ const SocialButton = ({ label, type, className = '', disabled }) => {
 
   return (
     <Button
-      className={className}
+      className={`bg-gray-100 border border-gray-300 hover:bg-gray-200 hover:border-gray-200 space-x-2 content-center justify-start align-center normal-case w-1/2 text-black my-1 ${className}`}
       variant='outlined'
       disabled={disabled}
     >
-      {getIcon()}<span >{label}</span>
+      {getIcon()}<span>{label}</span>
     </Button>
   );
 };
 
 SocialButton.propTypes = {
   label: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['github', 'google', 'facebook']).isRequired,
+  type: PropTypes.oneOf(['github', 'google', 'facebook', 'email']).isRequired,
   className: PropTypes.string,
   disabled: PropTypes.bool,
 };
