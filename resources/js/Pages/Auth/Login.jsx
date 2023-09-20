@@ -12,8 +12,11 @@ import Paper from "@mui/material/Paper";
 
 import { Head, Link, useForm } from "@inertiajs/react";
 import SocialButton from "@/Components/SocialButton";
+import { useState } from "react";
 
 export default function Login({ status, canResetPassword }) {
+
+    const [showForm, setShowForm] = useState(false);
     const { data, setData, post, processing, errors, reset } = useForm({
         email: "",
         password: "",
@@ -31,6 +34,10 @@ export default function Login({ status, canResetPassword }) {
 
         post(route("login"));
     };
+
+    const ShowEmailForm = () => {
+        setShowForm(true);
+    }
 
     return (
         <GuestLayout>
@@ -59,7 +66,7 @@ export default function Login({ status, canResetPassword }) {
                         label="Usar Facebook"
                     />
                 </a>
-                <a href="/auth/facebook/redirect" className='flex w-full justify-center items-center'>
+                <a onClick={ShowEmailForm} className='flex w-full justify-center items-center'>
                     <SocialButton
                         className="text-black font-normal"
                         type="email"
@@ -73,6 +80,8 @@ export default function Login({ status, canResetPassword }) {
                     {status}
                 </div>
             )}
+
+            {showForm &&
 
             <form onSubmit={submit}>
                 <div>
@@ -152,6 +161,7 @@ export default function Login({ status, canResetPassword }) {
                     )}
                 </div>
             </form>
+            }
         </GuestLayout>
     );
 }
