@@ -31,32 +31,29 @@ export default function Register() {
         <GuestLayout>
             <Head title="Register" />
 
-            <div className="flex flex-col items-center justify-center">
-                <a href="/auth/github/redirect">
+            <div className="flex flex-col">
+                <a href='/auth/github/redirect' className='flex w-full justify-center items-center'>
                     <SocialButton
-                        className="text-black text-center"
-                        type="github"
-                        label="Usar GitHub"
-                    />
+                            className="bg-gray-100 border border-gray-300 hover:bg-gray-200 hover:border-gray-200 space-x-2 content-center justify-start align-center normal-case w-1/2 text-black my-1 "
+                            type="github"
+                            label="Usar GitHub"
+                        />
                 </a>
-
-                <a href="/auth/google/redirect">
+                <a href='/auth/google/redirect' className='flex w-full justify-center items-center'>
                     <SocialButton
-                        className="text-black text-center w-full"
+                        className="bg-gray-100 border border-gray-300 hover:bg-gray-200 hover:border-gray-200 space-x-2 justify-start normal-case w-1/2 text-black my-1 "
                         type="google"
                         label="Usar Google"
                     />
                 </a>
-
-                <a href="/auth/facebook/redirect">
+                <a href='/auth/facebook/redirect' className='flex w-full justify-center items-center'>
                     <SocialButton
-                        className="text-black font-normal text-center w-full"
+                        className="bg-gray-100 border border-gray-300 hover:bg-gray-200 hover:border-gray-200 space-x-2 justify-start normal-case w-1/2 text-black my-1"
                         type="facebook"
                         label="Usar Facebook"
                     />
                 </a>
             </div>
-
 
             <span className='flex items-center justify-center mt-2'>ó</span>
 
