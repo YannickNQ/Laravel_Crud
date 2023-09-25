@@ -25,6 +25,7 @@
     "dependencies": {
         "@mui/icons-material": "^5.14.6",
         "dayjs": "^1.11.9",
+        "mui-datatables": "^4.3.0",
         "styled-components": "^6.0.7",
         "twin.macro": "^3.4.0"
     }
