@@ -75,14 +75,14 @@ export default function DeleteUserForm({ className = '' }) {
                             type="email"
                             name="email"
                             ref={emailInput}
-                            value={data.password}
+                            value={data.email}
                             onChange={(e) => setData('email', e.target.value)}
                             className="mt-1 block w-3/4"
                             isFocused
                             placeholder="Email"
                         />
 
-                        <InputError message={errors.password} className="mt-2" />
+                        <InputError message={errors.email} className="mt-2" />
                     </div>
 
                     <div className="mt-6 flex justify-end">
