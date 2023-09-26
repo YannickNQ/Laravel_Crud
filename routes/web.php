@@ -72,7 +72,7 @@ use Illuminate\Support\Facades\Route;
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-        Route::delete('/profile', [ProfileController::class, 'destroySocial'])->name('profile.destroySocial');
+        Route::delete('/profile/social', [ProfileController::class, 'destroySocial'])->name('profile.destroySocial');
     });
 
    Route::resource('vacants', VacantController::class)
