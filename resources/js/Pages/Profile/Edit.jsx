@@ -18,7 +18,7 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
                 <div className="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                     <UpdatePasswordForm className="max-w-xl" />
                 </div>
-                <p>Este es el contenido cuando social es null.</p>
+                {/* <p>Este es el contenido cuando social es null.</p> */}
                 <div className="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                     <DeleteUserForm className="max-w-xl" />
                 </div>
@@ -32,7 +32,7 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
                     <DeleteUserSocialForm className="max-w-xl" />
                 </div>
                  {/*Contenido por defecto*/}
-                <p>Este es el contenido por social.</p>
+                {/* <p>Este es el contenido por social.</p> */}
             </div>  
         );
     }
