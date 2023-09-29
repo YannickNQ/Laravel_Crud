@@ -12,7 +12,7 @@ import Paper from "@mui/material/Paper";
 
 import { Head, Link, useForm } from "@inertiajs/react";
 import SocialButton from "@/Components/SocialButton";
-import { useState } from "react";
+import TypeWriter from "@/Layouts/TypeWriterLayout";
 
 export default function Login({ status, canResetPassword }) {
 
@@ -36,21 +36,7 @@ export default function Login({ status, canResetPassword }) {
 
     return (
         <Grid container component="main" sx={{ height: '100vh' }}>
-            <CssBaseline />
-                <Grid
-                item
-                xs={false}
-                sm={4}
-                md={7}
-                sx={{
-                    backgroundImage: 'url(https://e0.pxfuel.com/wallpapers/149/259/desktop-wallpaper-web-development.jpg)',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundColor: (t) =>
-                    t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                }}
-                />
+            <TypeWriter />
             <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
                 <GuestLayout>
                     <Head title="Log in" />
