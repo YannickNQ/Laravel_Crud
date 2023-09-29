@@ -4,9 +4,16 @@ import { Link } from '@inertiajs/react';
 export default function Guest({ children }) {
     return (
         <div className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div className="w-full sm:max-w-md mt-6 px-6 py-2 bg-white shadow-md overflow-hidden sm:rounded-lg">
-                <span className='text-xl font-semibold w-full sm:max-w-md px-6 py-4 overflow-hidden sm:rounded-lg flex items-center text-center justify-center '>Inicia sesión o regístrate en cuestión de segundos</span>
-                <span className='text-base'>Usa tu correo electrónico u otro servicio para acceder a Canva gratis.</span>
+            <div>
+                <Link href="/" className='flex justify-center'>
+                    <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
+                </Link>
+                <Link href="/" className='flex justify-center'>
+                    <span className='text-[#07314A] text-3xl font-bold'>WebDevOps</span>
+                </Link>
+            </div>
+
+            <div className="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
                 {children}
             </div>
         </div>
